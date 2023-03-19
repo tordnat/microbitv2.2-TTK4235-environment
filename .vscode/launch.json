@@ -19,7 +19,7 @@
             // Uncomment for MacOS
             //"armToolchainPath": "/opt/homebrew/bin/",
             // Ubuntu
-            "armToolchainPath": "/opt/homebrew/bin/",
+            "armToolchainPath": "/opt/arm-none-eabi-12.2/bin/",
         "preLaunchTask": "build"
         }
     ]

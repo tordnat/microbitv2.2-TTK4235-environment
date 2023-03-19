@@ -24,7 +24,7 @@ CFLAGS += -Wall -Werror -std=gnu99
 CFLAGS += -DNRF52833_XXAA
 
 ## Linker flags
-CFLAGS += --specs=nosys.specs -Wl,--gc-sections -T $(LINKER_SCRIPT) -g
+CFLAGS += --specs=nosys.specs -Wl,--gc-sections -T $(LINKER_SCRIPT)
 # or --specs=nano.specs -lc -lnosys
 
 SOURCES += $(BUILD_DIR)/system_nrf52833.c
@@ -37,6 +37,12 @@ default:
 	$(QUIET)$(CC) $(CFLAGS) $(SOURCES) -o $(BUILD_DIR)/main.elf
 	@echo Creating hex file
 	$(QUIET)$(OBJCOPY) -O ihex $(BUILD_DIR)/main.elf $(BUILD_DIR)/main.hex
+
+debug:
+	@echo Compiling project with debug
+	$(CC) $(CFLAGS) -g $(SOURCES) -o $(BUILD_DIR)/main.elf
+	@echo Creating hex file
+	$(OBJCOPY) -O ihex $(BUILD_DIR)/main.elf $(BUILD_DIR)/main.hex
 
 flash:
 	nrfjprog -f $(FAMILY) --sectorerase --program $(BUILD_DIR)/main.hex
