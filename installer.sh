@@ -39,7 +39,7 @@ main() {
     chown student:student /opt/arm-none-eabi-12.2
     echo "--- Installing requirements ---"
     apt install openocd=0.10.0*
-    pip3 --user install pyocd==0.34.3
+    pip3 install --user pyocd==0.34.3
     echo "--- Installation Complete ---"
 }
 

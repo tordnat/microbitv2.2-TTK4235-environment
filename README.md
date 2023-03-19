@@ -14,3 +14,7 @@ chmod +x installer.sh
 ```
 sudo ./installer.sh
 ```
+
+```
+git clone https://github.com/tordnat/microbitv2.2-TTK4235-environment.git
+```
