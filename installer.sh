@@ -36,12 +36,10 @@ main() {
     rm -rf arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi.tar.xz
     mv arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi arm-none-eabi-12.2
     mv arm-none-eabi-12.2 $ARM_INSTALL_DIR
+    chown student:student /opt/arm-none-eabi-12.2
     echo "--- Installing requirements ---"
     apt install openocd=0.10.0*
-    pip3 install pyocd==0.34.3
-    echo "--- Cloning Handout Code ---"
-    git clone https://github.com/tordnat/microbitv2.2-TTK4235-environment.git
-    cd microbitv2.2-TTK4235-environment
+    pip3 --user install pyocd==0.34.3
     echo "--- Installation Complete ---"
 }
 
