@@ -44,6 +44,7 @@ main() {
     pip3 install --user testresources==2.0.1 pyocd==0.34.3
     echo "--- Adding pip3 packages to path ---"
     echo "export PATH=\"`python3 -m site --user-base`/bin:\$PATH\"" >> ~/.bashrc
+    echo "export PATH=$HOME/.local/bin" >> ~/.bashrc
     echo "--- Installation Complete ---"
 }
 
