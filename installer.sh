@@ -22,8 +22,8 @@ ARM_INSTALL_DIR="$(dirname "/opt")"
 if [ $# -eq 0 ]
   then
     echo "Arm GNU Toolchain defaulting to installdir /opt"
+
 else
-  then
     ARM_INSTALL_DIR="$(dirname "$0")"
 fi
 
