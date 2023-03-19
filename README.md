@@ -6,7 +6,7 @@ VSCode environment for debugging software developed for micro:bit v2.2.1 for Emb
 > Lab PC Installation
 
 ```
-wget https://raw.githubusercontent.com/tordnat/microbitv2.2-TTK4235-environment/main/lab_installer.sh && chmod +x installer.sh && sudo ./installer.sh && pip3 install --user testresources==2.0.1 pyocd==0.34.3
+wget https://raw.githubusercontent.com/tordnat/microbitv2.2-TTK4235-environment/main/lab_installer.sh && chmod +x installer.sh && sudo ./installer.sh && pip3 install --user testresources==2.0.1 pyocd==0.34.3 
 ```
 > Normal Installation
 
@@ -39,4 +39,11 @@ To fix broken library linking
 ```
 
     ln /usr/lib/x86_64-linux-gnu/libncursesw.so.6 /usr/lib/x86_64-linux-gnu/libncursesw.so.5
+```
+
+Pip packages not on PATH
+
+```
+
+echo "export PATH=$HOME/.local/bin" >> ~/.bashrc
 ```

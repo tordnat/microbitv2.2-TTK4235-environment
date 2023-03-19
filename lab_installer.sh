@@ -41,9 +41,6 @@ main() {
     chown student:student /opt/arm-none-eabi-12.2
     echo "--- Installing requirements ---"
     apt install openocd=0.10.0*
-    echo "--- Adding pip3 packages to path ---"
-    echo "export PATH=\"`python3 -m site --user-base`/bin:\$PATH\"" >> ~/.bashrc
-    echo "export PATH=$HOME/.local/bin:$PATH" >> ~/.bashrc
     echo "--- Installation Complete ---"
 }
 
