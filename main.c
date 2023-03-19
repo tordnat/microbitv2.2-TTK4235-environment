@@ -34,21 +34,18 @@ typedef struct {
 } NRF_GPIO_REGS1;
 
 void gpio_init(){
-	  GPIO0->PIN_CNF[14] = 0; //A
-	  GPIO0->PIN_CNF[23] = 0; //B
-
-	  // Configure leds
-	  GPIO0->PIN_CNF[21] = 1; //Row 1
-	  GPIO0->PIN_CNF[22] = 1; //Row 2
-	  GPIO0->PIN_CNF[15] = 1; //Row 3
-	  GPIO0->PIN_CNF[24] = 1; //Row 4
-	  GPIO0->PIN_CNF[19] = 1; //Row 5
-
-	  GPIO0->PIN_CNF[28] = 1; //Col 1
-	  GPIO0->PIN_CNF[11] = 1; //Col 2
-	  GPIO0->PIN_CNF[31] = 1; //Col 3
-	  GPIO1->PIN_CNF[5] = 1; //Col 4
-	  GPIO0->PIN_CNF[30] = 1; //Col 5 
+	  GPIO0->PIN_CNF[14] = 0;
+	  GPIO0->PIN_CNF[23] = 0; 
+	  GPIO0->PIN_CNF[21] = 1;
+	  GPIO0->PIN_CNF[22] = 1;
+	  GPIO0->PIN_CNF[15] = 1;
+	  GPIO0->PIN_CNF[24] = 1;
+	  GPIO0->PIN_CNF[19] = 1;
+	  GPIO0->PIN_CNF[28] = 1;
+	  GPIO0->PIN_CNF[11] = 1;
+	  GPIO0->PIN_CNF[31] = 1;
+	  GPIO1->PIN_CNF[5] = 1;
+	  GPIO0->PIN_CNF[30] = 1;
 };
 
 void gpio_lights_on(){
@@ -75,23 +72,10 @@ int main(){
 	
 	int sleep = 0;
 	while(1){
-
-		/* Check if button B is pressed;
-		 * turn on LED matrix if it is. */
-
-		if(!(GPIO0->IN & (1 << 23))){
-			gpio_lights_on();
-		}
-
-		/* Check if button A is pressed;
-		 * turn off LED matrix if it is. */
-
-		if(!(GPIO0->IN & (1 << 14))){
-			gpio_lights_off();
-		}
-
-
 		sleep = 10000;
+		gpio_lights_on();
+		while(--sleep);
+		gpio_lights_off();
 		while(--sleep);
 	}
 	return 0;

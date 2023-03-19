@@ -17,7 +17,7 @@ Default install location is /opt.
     exit
 fi
 
-ARM_INSTALL_DIR="$(dirname "/opt")"
+ARM_INSTALL_DIR="/opt"
 
 if [ $# -eq 0 ]
   then
@@ -33,13 +33,15 @@ main() {
     wget https://developer.arm.com/-/media/Files/downloads/gnu/12.2.rel1/binrel/arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi.tar.xz
     echo "--- Unpacking Arm GNU Toolchain ---"
     tar xvf arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi.tar.xz
+    rm -rf arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi.tar.xz
     mv arm-gnu-toolchain-12.2.rel1-x86_64-arm-none-eabi arm-none-eabi-12.2
-    mv arm-none-eabi-12.2 ARM_INSTALL_DIR
+    mv arm-none-eabi-12.2 $ARM_INSTALL_DIR
     echo "--- Installing requirements ---"
-    apt install openocd=0.10.0
-    pip3 install -r requirements.txt
+    apt install openocd=0.10.0*
+    pip3 install pyocd==0.34.3
     echo "--- Cloning Handout Code ---"
     git clone https://github.com/tordnat/microbitv2.2-TTK4235-environment.git
+    cd microbitv2.2-TTK4235-environment
     echo "--- Installation Complete ---"
 }
 
