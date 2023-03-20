@@ -75,8 +75,6 @@ int main(){
 		sleep = 10000;
 		gpio_lights_on();
 		while(--sleep);
-		gpio_lights_off();
-		while(--sleep);
 	}
 	return 0;
 }
