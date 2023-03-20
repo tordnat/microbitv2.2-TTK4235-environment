@@ -32,7 +32,7 @@ git clone https://github.com/tordnat/microbitv2.2-TTK4235-environment.git
 
 ## Common issues
 
-To fix broken library linking
+- Broken libraries
 
 > No such file libncursesw.so.5
 
@@ -41,9 +41,13 @@ To fix broken library linking
     ln /usr/lib/x86_64-linux-gnu/libncursesw.so.6 /usr/lib/x86_64-linux-gnu/libncursesw.so.5
 ```
 
-Pip packages not on PATH
+- Pip packages not on PATH
 
 ```
 
 echo "export PATH=$HOME/.local/bin" >> ~/.bashrc
 ```
+
+- User doesn't have access to device
+
+See [this comment on the arm MBed blogpost](https://os.mbed.com/blog/entry/Debugging-from-GDB-using-pyOCD/?compage=1#c9920)  for udev rules with pyocd.
