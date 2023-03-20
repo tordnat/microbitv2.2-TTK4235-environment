@@ -1,7 +1,15 @@
 # microbitv2.2-TTK4235-environment
 VSCode environment for debugging software developed for micro:bit v2.2.1 for Embedded Systems Course TTK4235
 
-## Install
+## Requirements
+- Arm GNU Toolchain 12.X.X
+- arm-none-eabi-gdb
+- pyocd
+- openocd
+
+## Installation
+
+Since arm has decided not to include arm-none-eabi-gdb in apt package, you have to install Arm GNU Toolchain manually to use arm-none-eabi-gdb. This may also result with some libraries not being linked properly (which is described in common issues below).
 
 > Lab PC Installation
 
@@ -51,3 +59,9 @@ echo "export PATH=$HOME/.local/bin" >> ~/.bashrc
 - User doesn't have access to device
 
 See [this comment on the arm MBed blogpost](https://os.mbed.com/blog/entry/Debugging-from-GDB-using-pyOCD/?compage=1#c9920)  for udev rules with pyocd.
+
+## Sources
+
+- [Debugging the BBC micro:bit with pyOCD and GDB](https://os.mbed.com/docs/mbed-os/v6.16/debug-test/debug-microbit.html)
+- [Rust on BBC micro:bit - hardware debugging](https://flames-of-code.netlify.app/blog/rust-microbit-3/)
+- [Micro:bit: DAPLink and the USB interface](https://tech.microbit.org/software/daplink-interface/)

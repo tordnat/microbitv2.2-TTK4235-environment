@@ -17,9 +17,9 @@
                 "target/nrf52.cfg"
             ],
             // Uncomment for MacOS
-            //"armToolchainPath": "/opt/homebrew/bin/",
+            "armToolchainPath": "/opt/homebrew/bin/",
             // Ubuntu Lab PC
-            "armToolchainPath": "/opt/arm-none-eabi-12.2/bin/",
+            //"armToolchainPath": "/opt/arm-none-eabi-12.2/bin/",
         "preLaunchTask": "build"
         }
     ]
