@@ -1,5 +1,5 @@
-.build_system/*.elf
-.build_system/*.hex
+.build_system/main.elf
+.build_system/main.hex
 .DS_Store
 .vscode/settings.json
 .vscode/.cortex-debug.registers.state.json

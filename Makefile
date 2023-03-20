@@ -44,12 +44,15 @@ debug:
 	@echo Creating hex file
 	$(OBJCOPY) -O ihex $(BUILD_DIR)/main.elf $(BUILD_DIR)/main.hex
 
-flash:
-	nrfjprog -f $(FAMILY) --sectorerase --program $(BUILD_DIR)/main.hex
-	nrfjprog -f $(FAMILY) --reset
 
+load:
+	@echo Loading main.hex to bootloader
+	pyocd load $(BUILD_DIR)/main.hex
+	@echo Resetting
+	pyocd reset
 erase:
-	nrfjprog -f $(FAMILY) --eraseall
+	@echo Erasing chip with pyocd
+	pyocd erase -c
 
 clean:
 	$(QUIET)rm $(BUILD_DIR)/main.{elf,hex}
