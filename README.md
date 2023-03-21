@@ -53,7 +53,7 @@ git clone https://github.com/tordnat/microbitv2.2-TTK4235-environment.git
 
 ```
 
-echo "export PATH=$HOME/.local/bin" >> ~/.bashrc
+echo "export PATH=$HOME/.local/bin:$PATH" >> ~/.bashrc
 ```
 
 - User doesn't have access to device
